@@ -17,7 +17,10 @@ class UsersTableSeeder extends Seeder
             'under_name' => 'Name',
             'over_name_kana' => 'ユーザー',
             'under_name_kana' => 'ネーム',
-            'mail' => 'User@mailaddress.com',
+            'mail_address' => 'User@mailaddress.com',
+            'sex' => '0',
+            'birth_day' => '1996-06-08',
+            'role' => '0',
             'password' => bcrypt('password'),
         ]);
     }
