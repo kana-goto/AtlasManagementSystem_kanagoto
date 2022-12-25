@@ -14,7 +14,13 @@ class SubjectsTableSeeder extends Seeder
     {
         // 国語、数学、英語を追加
         DB::table('subjects')->insert([
-            'subject' => '国語、数学、英語',
+            'subject' => '国語',
+        ]);
+        DB::table('subjects')->insert([
+            'subject' => '数学',
+        ]);
+        DB::table('subjects')->insert([
+            'subject' => '英語',
         ]);
     }
 }
