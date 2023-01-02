@@ -94,7 +94,7 @@
           <div class="selected_engineer">
             <div class="">
               <label>{{ $subject->subject }}</label>
-              <input type="checkbox" name="subjects[]" value="{{ $subject->id }}">
+              <input type="checkbox" name="subjects[]" value="{{ $subject->id }}" form="userSearchRequest">
             </div>
           </div>
           @endforeach
