@@ -68,6 +68,21 @@ class RegisterController extends Controller
             $birth_day = date('Y-m-d', strtotime($data));
             $subjects = $request->subject;
 
+            $rules = [
+                'over_name' => ['required', 'string', 'max:10'],
+                'under_name' => ['required', 'string', 'max:10'],
+                'over_name_kana' => ['required', 'string','/\A[ァ-ヴー]+\z/u', 'max:30'],
+                'under_name_kana' => ['required', 'string','/\A[ァ-ヴー]+\z/u', 'max:30'],
+                'mail_address' => ['required', 'email', 'unique:users', 'max:100'],
+                'sex' => ['required'],
+                'old_year' => ['required','before_or_equal:today'],
+                'old_month' => ['required', 'before_or_equal:today'],
+                'old_day' => ['required', 'before_or_equal:today'],
+                'role' => ['required'],
+                'password' => ['required', 'min:8', 'max:30', 'confirmed']
+            ];
+            $this->validate($request, $rules);
+
             $user_get = User::create([
                 'over_name' => $request->over_name,
                 'under_name' => $request->under_name,
@@ -85,7 +100,7 @@ class RegisterController extends Controller
             return view('auth.login.login');
         }catch(\Exception $e){
             DB::rollback();
-            return redirect()->route('loginView');
+            return redirect()->route('registerView')->withErrors($rules)->withInput();
         }
     }
 }
