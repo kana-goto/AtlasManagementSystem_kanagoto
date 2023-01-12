@@ -9,6 +9,10 @@
       <p><span>{{ $post->user->over_name }}</span><span class="ml-3">{{ $post->user->under_name }}</span>さん</p>
       <p><a href="{{ route('post.detail', ['id' => $post->id]) }}">{{ $post->post_title }}</a></p>
 
+      <input type="submit" name="sub_category" class="category_btn" value="{{ $post -> subCategories-> post_sub_category}}" form="postSearchRequest">
+
+
+
       <div class="post_bottom_area d-flex">
         <div class="d-flex post_status">
           <div class="mr-5">
@@ -39,7 +43,7 @@
         @foreach($categories as $category)
         <li class="main_categories" category_id="{{ $category->id }}"><span>{{ $category->main_category }}<span></li>
         @foreach ($category -> subCategories as $sub_category)
-        <input type="submit" name="sub_category" class="category_btn" value="{{ $sub_category->sub_category }}" form="postSearchRequest">
+        <input type="submit" name="category_word" class="category_btn" value="{{ $sub_category->sub_category }}" form="postSearchRequest">
         @endforeach
         @endforeach
       </ul>

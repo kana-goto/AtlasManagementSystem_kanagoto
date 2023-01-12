@@ -11,6 +11,7 @@ class SubCategory extends Model
     protected $fillable = [
         'main_category_id',
         'sub_category',
+        'post_sub_category',
     ];
     public function mainCategory(){
         return $this->belongsTo('App\Models\Categories\MainCategory');// リレーションの定義
