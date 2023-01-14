@@ -9,7 +9,6 @@
       <p><span>{{ $post->user->over_name }}</span><span class="ml-3">{{ $post->user->under_name }}</span>さん</p>
       <p><a href="{{ route('post.detail', ['id' => $post->id]) }}">{{ $post->post_title }}</a></p>
 
-      <input type="submit" name="sub_category" class="category_btn" value="{{ $post -> subCategories-> post_sub_category}}" form="postSearchRequest">
 
 
 
