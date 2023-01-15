@@ -160,7 +160,7 @@ return [
         'under_name_kana' => 'メイ',
         'mail_address' => 'メールアドレス',
         'sex' => '性別',
-        'birth_day' => '生年月日',
+        'year_month_day' => '生年月日',
         'old_year' => '年',
         'old_month' => '月',
         'old_day' => '日',
