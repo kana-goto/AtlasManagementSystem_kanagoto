@@ -150,6 +150,7 @@
           </select>
           <label style="font-size:13px">日</label>
           @if ($errors->has('old_day'))<li>{{$errors->first('old_day')}}</li>@endif
+
           @if ($errors->has('year_month_day'))<li>{{$errors->first('year_month_day')}}</li>@endif
         </div>
         <div class="mt-3">
