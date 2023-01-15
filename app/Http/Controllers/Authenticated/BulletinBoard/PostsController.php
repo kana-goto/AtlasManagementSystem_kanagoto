@@ -18,7 +18,7 @@ class PostsController extends Controller
     public function show(Request $request){
         $posts = Post::with('user', 'postComments','subCategories')->get();
         $categories = MainCategory::with('subCategories')->get();
-        $like = Like::with('likeCounts')->get();
+        $like = new Like;
         $post_comment = new Post;
         if(!empty($request->keyword)){
             $posts = Post::with('user', 'postComments')
@@ -31,9 +31,11 @@ class PostsController extends Controller
             $likes = Auth::user()->likePostId()->get('like_post_id');
             $posts = Post::with('user', 'postComments')
             ->whereIn('id', $likes)->get();
+            return view('authenticated.bulletinboard.post_like', compact('posts', 'categories', 'like', 'post_comment'));
         }else if($request->my_posts){
             $posts = Post::with('user', 'postComments','subCategories')
             ->where('user_id', Auth::id())->get();
+            return view('authenticated.bulletinboard.post_myself', compact('posts', 'categories', 'like', 'post_comment'));
         }
         return view('authenticated.bulletinboard.posts', compact('posts', 'categories', 'like', 'post_comment'));
     }
