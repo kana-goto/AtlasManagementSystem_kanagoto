@@ -120,7 +120,7 @@ return [
     'uuid'                 => ':attributeは、有効なUUIDでなければなりません。',
 
     'values' => [
-        'birth_day' => [
+        'year_month_day' => [
             'today' => '今日',
         ],
     ],
