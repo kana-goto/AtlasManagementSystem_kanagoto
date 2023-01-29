@@ -16,5 +16,21 @@
   </div>
 </div>
 
+<!-- モーダルの中身　キャンセル -->
+    <div class="modal js-modal">
+        <div class="modal__bg js-modal-close"></div>
+        <div class="modal__content">
+          <li>予約日：</li>
+          <li>時間：</li>
+          <textarea name="upPost" class="modal_getPart" ></textarea>
+          <li>上記の予約をキャンセルしてもよろしいですか？</li>
+          <div class="w-50 m-auto edit-modal-btn d-flex">
+            <a class="js-modal-close btn btn-primary d-inline-block" href="">閉じる</a>
+            <input type="submit" class="btn btn-danger d-block "  value="キャンセル">
+          </div>
+            {{ csrf_field() }}
+        </div>
+    </div>
+
 
 @endsection
