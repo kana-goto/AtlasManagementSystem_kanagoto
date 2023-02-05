@@ -39,13 +39,14 @@ class CalendarsController extends Controller
     {
         $getPart = $request->getPart;
         $getDate = $request->getData;
-        $reserveDays = array_filter(array_combine($getDate, $getPart));
-        foreach($reserveDays as $key => $value){
-             $reserve_settings = ReserveSettings::where('setting_reserve', $key)->where('setting_part', $value)->first();
+
+
+
+             $reserve_settings = ReserveSettings::where('setting_reserve', $getDate)->where('setting_part', $getPart)->first();
              $reserve_settings->increment('limit_users');
              $reserve_settings->users()->detach(Auth::id());
-        }
-        DB::commit();
+
+
 
         return redirect()->route('calendar.general.show', ['user_id' => Auth::id()]);
     }

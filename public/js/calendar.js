@@ -6,6 +6,8 @@ $(function () {
 
     $('.modal_getPart').text(getPart);
     $('.modal_getData').text(getData);
+    $('.modal_getPart').val(getPart);
+    $('.modal_getData').val(getData);
   });
 
   $('.js-modal-close').on('click', function () {
