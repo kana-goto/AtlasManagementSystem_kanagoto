@@ -20,9 +20,8 @@
     <div class="modal js-modal">
         <div class="modal__bg js-modal-close"></div>
         <div class="modal__content">
-          <li>予約日：</li>
-          <li>時間：</li>
-          <textarea name="upPost" class="modal_getPart" ></textarea>
+          <li>予約日：<a class="modal_getData"></a></li>
+          <li>時間：リモ<a class="modal_getPart"></a>部</li>
           <li>上記の予約をキャンセルしてもよろしいですか？</li>
           <div class="w-50 m-auto edit-modal-btn d-flex">
             <a class="js-modal-close btn btn-primary d-inline-block" href="">閉じる</a>

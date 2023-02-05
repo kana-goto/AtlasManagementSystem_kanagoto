@@ -49,6 +49,7 @@ class CalendarView{
 
         if(in_array($day->everyDay(), $day->authReserveDay())){
           $reservePart = $day->authReserveDate($day->everyDay())->first()->setting_part;
+          $getPart = $day->authReserveDate($day->everyDay())->first()->setting_part;
           if($reservePart == 1){
             $reservePart = "リモ1部";
           }else if($reservePart == 2){
@@ -68,12 +69,13 @@ class CalendarView{
             $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px">'. $reservedPart .'</p>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';//1部参加
           }else{
-            $html[] = '<button type="submit" class="btn btn-danger p-0 w-75 js-modal-open" name="delete_date" style="font-size:12px" getPart="{{ $getPart->getPart }}" setting_reserve="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'" >'. $reservePart .'</button>';//キャンセルボタン
+            $html[] = '<button type="submit" class="btn btn-danger p-0 w-75 js-modal-open" name="delete_date" style="font-size:12px" getPart="'.$getPart.'" getData="'.$day->authReserveDate($day->everyDay())->first()->setting_reserve.'"  value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'" >'. $reservePart .'</button>';//キャンセルボタン
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts" >';
           }
         }else{
           if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
             $html[] = '受付終了';
+            $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts" >';
           }else{
             $html[] = $day->selectPart($day->everyDay());
           }
