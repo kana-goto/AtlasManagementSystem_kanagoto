@@ -38,12 +38,12 @@ class RegisterFormRequest extends FormRequest
             'over_name_kana' => 'required|string|regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u|max:30',
             'under_name_kana' => 'required|string|regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u|max:30',
             'mail_address' => 'required|email|unique:users|max:100',
-            'sex' => 'required|regex:/^[1|2|3]+$/u',
+            'sex' => 'required|in: 1,2,3',
             'year_month_day' => 'after_or_equal:2000-01-01|before:today',
             'old_year' => 'required',
             'old_month' => 'required',
             'old_day' => 'required',
-            'role' => 'required',
+            'role' => 'required|in: 1,2,3',
             'password' => 'required|min:8|max:30|confirmed'
         ];
     }
