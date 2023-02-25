@@ -31,7 +31,7 @@ class CalendarWeekDay{
 
     $html[] = '<div class="text-left">';
     if($one_part){
-      $html[] = '<p class="day_part m-0 pt-1">1部</p>';
+      $html[] = '<p class="day_part m-0 pt-1" href="'.route('calendar.admin.detail',$id,$data,$part).'">1部 '.ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '1')->get()->count().'</p>';
     }
     if($two_part){
       $html[] = '<p class="day_part m-0 pt-1">2部</p>';
