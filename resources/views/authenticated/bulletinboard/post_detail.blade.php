@@ -8,8 +8,10 @@
           <div>
           </div>
           <div>
+            @if (Auth::user()->id == $post->user_id)
             <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
             <a class="delate" href="{{ route('post.delete', ['id' => $post->id]) }}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a>
+            @endif
           </div>
         </div>
 
@@ -21,8 +23,8 @@
           </p>
           <span class="ml-5">{{ $post->created_at }}</span>
         </div>
-        <div class="detsail_post_title">{{ $post->post_title }}</div>
-        <div class="mt-3 detsail_post">{{ $post->post }}</div>
+        <div class="detail_post_title">{{ $post->post_title }}</div>
+        <div class="mt-3 detail_post">{{ $post->post }}</div>
       </div>
       <div class="p-3">
         <div class="comment_container">
@@ -44,6 +46,9 @@
     <div class="comment_container border m-5">
       <div class="comment_area p-3">
         <p class="m-0">コメントする</p>
+        @if($errors->first('comment'))
+        <span class="error_message">{{ $errors->first('comment') }}</span>
+        @endif
         <textarea class="w-100" name="comment" form="commentRequest"></textarea>
         <input type="hidden" name="post_id" form="commentRequest" value="{{ $post->id }}">
         <input type="submit" class="btn btn-primary" form="commentRequest" value="投稿">

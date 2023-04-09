@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\BulletinBoard;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostFormRequest extends FormRequest
+class PostEditFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,6 @@ class PostFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'post_category_id' => 'required|exists:sub_categories,id',
             'post_title' => 'required|string|max:100',
             'post_body' => 'required|string|max:5000',
         ];
@@ -32,8 +31,6 @@ class PostFormRequest extends FormRequest
 
     public function messages(){
         return [
-            'post_category_id.required' => 'カテゴリーは必ず選択してください。',
-            'post_category_id.exists' => '登録されているカテゴリーを選択してください。',
             'post_title.required' => 'タイトルは必ず入力してください。',
             'post_title.string' => 'タイトルは文字列で入力してください。',
             'post_title.max' => 'タイトルは100文字以内で入力してください。',
