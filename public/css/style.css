@@ -171,6 +171,13 @@ li {
   justify-content: space-between;
 }
 
+.detail_inner_head span,
+.detail_inner_head input,
+.detail_inner_head a {
+  font-size: 12px;
+  font-weight: bold;
+}
+
 .edit-modal-open {
   cursor: pointer;
 }
@@ -193,6 +200,10 @@ li {
 .comment_area input {
   font-size: 12px;
   font-weight: bold;
+}
+
+.comment_name {
+  color: #999;
 }
 
 .comment_area textarea {
