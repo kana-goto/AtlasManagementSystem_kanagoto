@@ -135,6 +135,11 @@ li {
   justify-content: space-between;
 }
 
+.post_bottom_area span {
+  font-size: 12px;
+  font-weight: bold;
+}
+
 .like_btn,
 .un_like_btn {
   cursor: pointer;
