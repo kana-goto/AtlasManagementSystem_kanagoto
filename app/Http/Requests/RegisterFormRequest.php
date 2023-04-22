@@ -43,7 +43,7 @@ class RegisterFormRequest extends FormRequest
             'old_year' => 'required',
             'old_month' => 'required',
             'old_day' => 'required',
-            'role' => 'required|in: 1,2,3',
+            'role' => 'required|in: 1,2,3,4',
             'password' => 'required|min:8|max:30|confirmed'
         ];
     }

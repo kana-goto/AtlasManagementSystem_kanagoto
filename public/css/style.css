@@ -16,6 +16,20 @@ li {
   list-style: none;
 }
 
+img.atlas {
+  width: 10%;
+  height: 10%;
+  padding: 10px;
+}
+
+.login-block {
+  background: #FFF;
+}
+
+.register-block {
+  background: #FFF;
+}
+
 /* サイドバー */
 .sidebar {
   width: 150px;
