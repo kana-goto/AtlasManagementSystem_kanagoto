@@ -24,15 +24,17 @@ img.atlas {
 
 .login-block {
   background: #FFF;
+  border-radius: 10px;
 }
 
 .register-block {
   background: #FFF;
+  border-radius: 10px;
 }
 
 /* サイドバー */
 .sidebar {
-  width: 150px;
+  width: 170px;
   height: 100vh;
   background-color: #03AAD2;
   font-weight: bold;
@@ -134,14 +136,17 @@ img.atlas {
   resize: none;
   height: 300px;
   white-space: pre-wrap;
+  border-radius: 10px;
 }
 
 .detail_container {
   background: #FFF;
+  border-radius: 10px;
 }
 
 .post_area {
   background: #FFF;
+  border-radius: 10px;
   border-radius: 10px;
 }
 
@@ -213,6 +218,7 @@ img.atlas {
 /* 掲示板 コメント */
 .comment_container {
   background: #FFF;
+  border-radius: 10px;
 }
 
 .comment_area p,
@@ -252,19 +258,38 @@ img.atlas {
   color: #FFF;
 }
 
-.category_btn {
+.category_btn1 {
   font-size: 12px;
   border-radius: 5px;
-  padding: 0 5px;
+  padding: 5px 20px;
   border: none;
-  background: #999;
+  background: #FF99FF;
   color: #FFF;
 }
+
+.category_btn2 {
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 5px 20px;
+  border: none;
+  background: #FFCC33;
+  color: #FFF;
+}
+
 
 .main_categories span,
 .sub_categories li input {
   list-style: none;
   cursor: pointer;
+  border-bottom: 2px solid #C0C0C0;
+}
+
+.main_categories.active i {
+  transform: rotate(-180deg);
+}
+
+.category_btn {
+  display: none;
 }
 
 .main_categories_name {
@@ -273,6 +298,11 @@ img.atlas {
 
 .sub_categories_name {
   color: #000;
+}
+
+.post_btn {
+  width: 250px;
+  border-radius: 10px;
 }
 
 /* ユーザー検索 */
@@ -284,7 +314,6 @@ img.atlas {
   height: 80vh;
   overflow: scroll;
   padding: 10px;
-  background: #FFF;
   border-radius: 5px;
 }
 
@@ -295,15 +324,23 @@ img.atlas {
 .one_person {
   width: 250px;
   height: 250px;
+  border-radius: 10px;
+  background: #FFF;
+  padding: 20px;
 }
 
 .search_conditions span {
   cursor: pointer;
+  border-bottom: 2px solid #C0C0C0;
 }
 
 .search_conditions_inner {
   display: none;
-  background: #FFF;
+  background: #ECF1F6;
+}
+
+.search-trigger.active p i {
+  transform: rotate(-180deg);
 }
 
 .subject_edit_btn {
@@ -312,11 +349,24 @@ img.atlas {
   cursor: pointer;
 }
 
+.subject_edit_btn.active i {
+  transform: rotate(-180deg);
+}
+
 .subject_inner {
   display: none;
 }
 
+.search_btn input {
+  font-size: 12px;
+  width: 250px;
+}
+
 /* スクール予約詳細確認画面 */
+.reserve-user:nth-child(odd) {
+  background-color: #CCFFCC;
+}
+
 .reserve {
   background-color: #03AAD2;
   color: #FFF;
