@@ -288,6 +288,10 @@ img.atlas {
   transform: rotate(-180deg);
 }
 
+[class^="category_num"] {
+  display: none;
+}
+
 .category_num {
   display: none;
 }
