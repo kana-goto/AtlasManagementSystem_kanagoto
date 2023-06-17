@@ -96,6 +96,10 @@ img.atlas {
   width: 70%;
 }
 
+.adjust-area2 a {
+  padding-right: 30px;
+}
+
 /* モーダル */
 .modal {
   display: none;
