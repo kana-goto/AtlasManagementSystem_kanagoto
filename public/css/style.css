@@ -150,6 +150,12 @@ img.atlas {
   border-radius: 10px;
 }
 
+.post_area a {
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+}
+
 .post_bottom_area {
   justify-content: space-between;
 }
@@ -250,6 +256,10 @@ img.atlas {
   border-radius: 10px;
 }
 
+.keyword_area {
+  padding: 10px 0px 10px 0px;
+}
+
 .category_box {
   border-radius: 5px;
   padding: 3px;
@@ -276,24 +286,37 @@ img.atlas {
   color: #FFF;
 }
 
+.other_area p {
+  padding-top: 10px;
+}
 
-.main_categories span,
-.sub_categories li input {
-  list-style: none;
+
+.main_categories span {
+  justify-content: space-between;
+  width: 250px;
   cursor: pointer;
   border-bottom: 2px solid #C0C0C0;
+}
+
+.other_area ul {}
+
+.main_categories i {
+  padding-right: 50px;
+  padding-left: 50px;
 }
 
 .main_categories.active i {
   transform: rotate(-180deg);
 }
 
-[class^="category_num"] {
-  display: none;
+.sub_categories2 {
+  padding-left: 30px;
 }
 
-.category_num {
+[class^="category_num"] {
   display: none;
+  border: 0px;
+  border-bottom: 2px solid #C0C0C0;
 }
 
 .main_categories_name {
