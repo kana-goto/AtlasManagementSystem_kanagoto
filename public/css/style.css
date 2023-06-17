@@ -298,7 +298,6 @@ img.atlas {
   border-bottom: 2px solid #C0C0C0;
 }
 
-.other_area ul {}
 
 .main_categories i {
   padding-right: 50px;
@@ -348,12 +347,24 @@ img.atlas {
   font-size: 12px;
 }
 
+.reserve_users_area span2 {
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
+}
+
 .one_person {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   border-radius: 10px;
   background: #FFF;
-  padding: 20px;
+  padding: 10px;
+  margin: 5px;
+  box-shadow: 3px 3px 7px #666666;
+}
+
+.search_type {
+  padding: 20px 0px 20px 0px;
 }
 
 .search_conditions span {
@@ -366,8 +377,13 @@ img.atlas {
   background: #ECF1F6;
 }
 
+.search-trigger i {
+  padding-left: 90px;
+}
+
 .search-trigger.active p i {
   transform: rotate(-180deg);
+  padding-right: 90px;
 }
 
 .subject_edit_btn {

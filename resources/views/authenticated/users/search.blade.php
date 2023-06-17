@@ -6,38 +6,38 @@
     @foreach($users as $user)
     <div class="border one_person">
       <div>
-        <span>ID : </span><span>{{ $user->id }}</span>
+        <span>ID : </span><span2>{{ $user->id }}</span2>
       </div>
       <div><span>名前 : </span>
         <a href="{{ route('user.profile', ['id' => $user->id]) }}">
-          <span>{{ $user->over_name }}</span>
-          <span>{{ $user->under_name }}</span>
+          <span2>{{ $user->over_name }}</span2>
+          <span2>{{ $user->under_name }}</span2>
         </a>
       </div>
       <div>
         <span>カナ : </span>
-        <span>({{ $user->over_name_kana }}</span>
-        <span>{{ $user->under_name_kana }})</span>
+        <span2>({{ $user->over_name_kana }}</span2>
+        <span2>{{ $user->under_name_kana }})</span2>
       </div>
       <div>
         @if($user->sex == 1)
-        <span>性別 : </span><span>男</span>
+        <span>性別 : </span><span2>男</span2>
         @else
-        <span>性別 : </span><span>女</span>
+        <span>性別 : </span><span2>女</span2>
         @endif
       </div>
       <div>
-        <span>生年月日 : </span><span>{{ $user->birth_day }}</span>
+        <span>生年月日 : </span><span2>{{ $user->birth_day }}</span2>
       </div>
       <div>
         @if($user->role == 1)
-        <span>権限 : </span><span>教師(国語)</span>
+        <span>権限 : </span><span2>教師(国語)</span2>
         @elseif($user->role == 2)
-        <span>権限 : </span><span>教師(数学)</span>
+        <span>権限 : </span><span2>教師(数学)</span2>
         @elseif($user->role == 3)
-        <span>権限 : </span><span>講師(英語)</span>
+        <span>権限 : </span><span2>講師(英語)</span2>
         @else
-        <span>権限 : </span><span>生徒</span>
+        <span>権限 : </span><span2>生徒</span2>
         @endif
       </div>
       <div>
@@ -45,19 +45,19 @@
         <span>選択科目 :</span>
         @endif
         @foreach($user->subjects as $subject)
-        <span>{{ $subject->subject }}</span>
+        <span2>{{ $subject->subject }}</span2>
         @endforeach
       </div>
     </div>
     @endforeach
   </div>
   <div class="search_area w-25 border">
-    <div class="">
+    <div class="search_type">
       <div>
         <lavel>検索</lavel>
         <input type="text" class="free_word" name="keyword" placeholder="キーワードを検索" form="userSearchRequest">
       </div>
-      <div>
+      <div class="search_type">
         <lavel>カテゴリ</lavel>
         <select form="userSearchRequest" name="category">
           <option value="name">名前</option>
@@ -91,15 +91,12 @@
               <option value="4" class="">生徒</option>
             </select>
           </div>
+          <div class="selected_engineer">
           <label>選択科目</label>
           @foreach($subjects as $subject)
-          <div class="selected_engineer">
-            <div class="">
-              <label>{{ $subject->subject }}</label>
-              <input type="checkbox" name="subjects[]" value="{{ $subject->id }}" form="userSearchRequest">
-            </div>
-          </div>
+              <span>{{ $subject->subject }}</span><input type="checkbox" name="subjects[]" value="{{ $subject->id }}" form="userSearchRequest">
           @endforeach
+          </div>
         </div>
       </div>
       <div class="search_btn">
