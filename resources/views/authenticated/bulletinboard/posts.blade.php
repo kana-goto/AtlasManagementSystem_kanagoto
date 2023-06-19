@@ -42,7 +42,7 @@
         <ul>
           @foreach($categories as $category)
           <li class="main_categories" category_id="{{ $category->id }}">
-            <span>{{ $category->main_category }} <i class="fa fa-angle-down"></i><span>
+            <span>{{ $category->main_category }} <i class="fa fa-angle-down"></i></span>
           </li>
           @foreach ($category -> subCategories as $sub_category)
           <ul>

@@ -4,8 +4,11 @@
   <div class="w-50 mt-5">
     <div class="m-3 detail_container">
       <div class="p-3">
-        @if($errors->first('comment'))
-        <span class="error_message">{{ $errors->first('comment') }}</span>
+        @if($errors->first('post_title'))
+        <span class="error_message">{{ $errors->first('post_title') }}</span>
+        @endif
+        @if($errors->first('post_body'))
+        <span class="error_message">{{ $errors->first('post_body') }}</span>
         @endif
         <div class="detail_inner_head">
           @foreach ($post-> subCategories as $sub_category)

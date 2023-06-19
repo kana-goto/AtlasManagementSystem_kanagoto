@@ -296,17 +296,13 @@ img.atlas {
 
 
 .main_categories span {
+  display: flex;
   justify-content: space-between;
   width: 250px;
   cursor: pointer;
   border-bottom: 2px solid #C0C0C0;
 }
 
-
-.main_categories i {
-  padding-right: 50px;
-  padding-left: 50px;
-}
 
 .main_categories.active i {
   transform: rotate(-180deg);
